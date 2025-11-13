@@ -1,0 +1,39 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: ID!
+  email: String!
+  isTwoFactorEnabled: Boolean!
+}
+
+type Query {
+  me: User!
+}
+
+type Mutation {
+  register(input: RegisterInput!): User!
+  login(input: LoginInput!): String!
+  initiateTwoFactor: String!
+  confirmTwoFactor(input: TwoFactorInput!): String!
+  updateUser(input: UpdateUserInput!): User!
+}
+
+input RegisterInput {
+  email: String!
+  password: String!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+input TwoFactorInput {
+  code: String!
+}
+
+input UpdateUserInput {
+  email: String
+}
